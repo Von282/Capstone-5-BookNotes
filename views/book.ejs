@@ -1,0 +1,50 @@
+<%- include("partials/header.ejs") %>
+    <div class="content-container">
+        <aside class="details">
+            <img src="https://covers.openlibrary.org/b/isbn/<%= info.isbn %>-M.jpg" 
+            srcset="https://covers.openlibrary.org/b/isbn/<%= info.isbn %>-L.jpg" 
+            class="cover-large"/>
+            <div>
+                <strong><p class="p-title"><%= info.title %> </p></strong>
+                <strong><p class="p-author">By: <%= info.author %> </p></strong>
+                <strong><p class="p-isbn">ISBN: <%= info.isbn %> </p></strong>
+                <strong><p class="p-date">Complete: <%= info.to_char %> </p></strong>
+                <strong><p class="p-rating">Rating: <%= info.rating %> </p></strong>
+            </div>
+            
+        </aside>
+        <section class="review-section">
+            <div class="review">
+                <strong><p> <%= info.review %> </p></strong>
+            </div>
+            <div class="edit-delete">
+                <button onclick="editReview()" id="edit" class="edit">Edit Review</button>
+                <form action="/delete/<%= info.id %>" method="post">
+                    <input type="hidden" name="id" id="deleted-id">
+                    <button type="submit" class="delete">Delete</button>
+                </form>
+                
+            </div>
+        </section>
+
+        <div class="edit-tab">
+            <div class="edit-header">
+                <h2>Edit Your Review</h2>
+            </div>
+            <form action="/edit" method="post" class="edit-form">
+                <input type="hidden" name="id" value="<%= info.id %>">
+                <label for="new-review">New Review:</label>
+                <br />
+                <textarea name="new-review" id="new-review" cols="80" rows="16"><%= info.review %></textarea>
+                <br />
+                <button type="submit" class="submit-edit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function editReview() {
+            const editbtn = document.getElementsByClassName("edit-tab")[0];
+            editbtn.classList.add("active");
+        }
+    </script>
+<%- include("partials/footer.ejs") %>

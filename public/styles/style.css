@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(to left top, #001f3f, #152949, #253453, #343f5d, #424b67);
+    min-height: 100%;
+}
+
+h1.title {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 600;
+}
+
+header {
+    padding: 2em 0;
+    background-color: #C97C5D;
+}
+
+header a {
+    display: contents;
+    height: 0;
+    text-decoration: none;
+    color: white;
+}
+
+header > div {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+h1 .book {
+    font-size: 2.5rem;
+    margin-right: 2rem;
+}
+
+header .title {
+    font-size: 3rem;
+}
+
+.add-btn {
+    border-radius: 11px;
+    padding: 0.5em;
+    border: 2px solid #253453;
+    transition: all 0.3s;
+}
+
+.add-btn:hover {
+    cursor: pointer;
+    background-color: #d6d6d6;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.sorting {
+    color: #ebebeb;
+    margin-top: 1em;
+    align-self: flex-end;
+    font-size: 1.2rem;
+}
+
+#sort-order {
+    margin-right: 2em;
+    outline: none;
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.books-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1.3em;
+    overflow: visible;
+    min-height: 80vh;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: red; */
+    height: 50vh;
+    width: 22vw;
+    color: #ebebeb;
+    margin: 1.2em;
+    overflow: scroll;
+}
+
+.no-box-cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    font-size: 3rem;
+    font-weight: 500;
+    border-radius: 10px;
+    background-color: #cdcdcd;
+}
+
+.cover {
+    width: 165px;
+    border: 2px solid black;
+}
+
+.cover-large {
+    width: 180px;
+    border: 2px solid black;
+}
+
+.box p {
+    margin-top: 0.5em;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.book-title {
+    margin: 0 1em;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+}
+
+.to-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 80px;
+    right: 32px;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    text-decoration: none;
+    color: white;
+    background-color: #C97C5D;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.to-top.active {
+    bottom: 80px;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.to-top:hover {
+    background-color: #8d5742;
+    color: rgb(205, 205, 205);
+    transform: scale(1.2);
+}
+
+.to-top span {
+    font-size: 3rem;
+    
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    position: absolute;
+    width: 100%;
+    background-color: #C97C5D;
+    color: white;
+    font-size: 1.2rem;
+}
+/* ////////////////////// Styling for index.ejs ///////////////////////// */
+
+.add-header {
+    padding-top: 2.5em;
+    margin-bottom: 1.3em;
+    text-align: center;
+    color: white;
+    background-color: none;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 500;
+}
+
+.form-container {
+    position: relative;
+}
+
+.form-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+    color: white;
+}
+
+input, #score {
+    outline: none;
+}
+
+#title, #author, #isbn {
+    height: 4vh;
+    width: 20vw;
+    padding: 0.3em;
+    font-size: 1.1rem;
+    background-color: rgb(231, 230, 230);
+}
+
+#date {
+    height: 5vh;
+    width: 10vw;
+    padding: 0.3em;
+    font-size: 1rem;
+    background-color: rgb(231, 230, 230);
+}
+
+.charLimit {
+    font-size: small;
+    color: rgb(211, 211, 211);
+}
+
+#review {
+    height: 35vh;
+    width: 40vw;
+    outline: none;
+    padding: 0.4em;
+    font-size: 1.2rem;
+    resize: none;
+    overflow: scroll;
+    background-color: rgb(231, 230, 230);
+}
+
+#score {
+    height: 5vh;
+    background-color: rgb(231, 230, 230);
+}
+
+#title, #author, #isbn, #date, #review, #score {
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+}
+
+.form-data div {
+    margin: 0.5em 0;
+}
+
+.submit-btn {
+    border-radius: 11px;
+    padding: 1em;
+    border: 2px solid black;
+    margin-bottom: 2em;
+    transition: all 0.3s;
+}
+
+.submit-btn:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #C97C5D;
+}
+/* ////////////////////// Styling for add.ejs ///////////////////////// */
+
+.content-container {
+    display: flex;
+    position: relative;
+    padding-right: 2em;
+    margin: 1em;
+    border-radius: 10px;
+    background-color: #cdcdcd;
+}
+
+.details, .review-section {
+    padding-top: 1em;
+    margin: 0.1em 0 0.1em 0;
+    height: 80vh;
+}
+
+.review-section {
+    width: 100%;
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    font-size: large;
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
+.review {
+    overflow: scroll;
+    height: 95%;
+    
+    padding-bottom: 1em;
+}
+
+.edit-delete {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.edit, .delete, .submit-edit {
+    border-radius: 11px;
+    padding: 0.5em;
+    border: 2px solid #253453;
+    transition: all 0.3s;
+}
+
+.edit:hover, .delete:hover, .submit-edit:hover {
+    cursor: pointer;
+    background-color: #bab9b9;
+}
+
+.details {
+    min-width: 26vw;
+    max-width: 26vw;
+    text-align: center;
+    border-right: 3px solid #001f3f;
+    border-radius: 10px;
+}
+
+.details p {
+    margin: 0.3em 0;
+}
+.details div {
+    text-align: left;
+    width: auto;
+    margin-top: 1em;
+    margin-left: 4em;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+}
+
+.edit-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    width: 93%;
+    height: 93%;
+    top:0; 
+    left:0;
+    margin: 1em 0 0 3em;
+    opacity: 0;
+    visibility: hidden;
+    background-color: #bab9b9;
+    transition: all 0.3s;
+}
+
+.edit-tab.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.edit-tab h2 {
+    font-size: 2.4rem;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 500;
+}
+
+.edit-form label {
+    font-size: 1.4rem;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+}
+
+#new-review {
+    outline: none;
+    padding: 0.4em;
+    font-size: 1.2rem;
+    resize: none;
+    overflow: scroll;
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    background-color: rgb(231, 230, 230);
+}
+
+.new-review-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

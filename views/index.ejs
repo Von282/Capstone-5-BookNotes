@@ -1,0 +1,61 @@
+<%- include("partials/header.ejs") %>
+
+    <main>
+        <div class="sorting">
+            <form action="/sort" method="get" id="sort-form">
+                <label for="sort">Sort:</label>
+                <select name="sort" id="sort-order">
+                    <option value="">Order...</option>
+                    <option value="default" id="default">Default</option>
+                    <option value="rating" id="rating">Rating</option>
+                    <option value="recency" id="recency">Recency</option>
+                </select>
+            </form>
+        </div>
+        <div class="books-section">
+            <% if (locals.library) { %>
+                <% for(let item of library) {%>
+                <div class="box">
+                    <a href="/book/<%= item.id%>" class="details-link">
+                        <img src="https://covers.openlibrary.org/b/isbn/<%= item.isbn %>-M.jpg" 
+                        srcset="https://covers.openlibrary.org/b/isbn/<%= item.isbn %>-L.jpg" 
+                        class="cover"/>
+                    </a>
+                    
+                    <div class="book-title">
+                        <p> <%= item.title %> </p>
+                    </div>
+                </div>
+                <% } %>
+            <% } else {%>
+                <div class="no-box-cover">
+                    <p>Add a Book...</p>
+                </div>
+            <% }%>
+        </div>
+    </main>
+   
+    <a href="#" class="to-top">
+        <span class="material-symbols-outlined">
+            keyboard_arrow_up
+        </span>
+    </a>
+    <script>
+        const routeSelect = document.getElementById("sort-order");
+        const form = document.getElementById("sort-form");
+        const toTop = document.querySelector(".to-top");
+
+        window.addEventListener("scroll", () => {
+            if(window.pageYOffset > 100) {
+                toTop.classList.add("active")
+            } else {
+                toTop.classList.remove("active");
+            }
+        });
+
+        routeSelect.addEventListener("change", (event) => {
+            form.action = event.target.value;
+            form.submit()
+        });
+    </script>
+<%- include("partials/footer.ejs") %>

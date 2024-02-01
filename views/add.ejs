@@ -1,0 +1,59 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="add-header">
+        <h1 class="page-title">Add New Book</h1>
+    </div>
+
+    <main>
+        <div class="form-container">
+            <form action="/add" method="post" class="form-data">
+                <div class="title">
+                    <label for="title">Enter Title:</label>
+                    <input type="text" name="title" id="title" maxlength="90" autocomplete="off" required>
+                </div>
+                <div class="author">
+                    <label for="author">Enter Author:</label>
+                    <input type="text" name="author" id="author" maxlength="50" autocomplete="off" required>
+                </div>
+                <div class="isbn">
+                    <label for="isbn">Enter ISBN:</label>
+                    <input type="tel" name="isbn" id="isbn" minlength="13" maxlength="13" pattern="[0-9]{13}" autocomplete="off" 
+                    placeholder="13 Digits..." required>
+                </div>
+                <div class="date">
+                    <label for="date">Date Read:</label>
+                    <input type="date" name="date" id="date" required>
+                </div>
+                <div class="review">
+                    <label for="review">Review: <span class="charLimit">(1000 Character Limit)</span></label>
+                    <br />
+                    <!-- <input type="text" name="review" id="review" required> -->
+                    <textarea name="review" id="review" cols="30" rows="10" required></textarea>
+                </div>
+                <div class="rating-div">
+                    <label for="rating">Book Rating:</label>
+                    <select name="rating" id="score" maxlength="2" required>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <!-- <input type="text" name="rating" id="" required> -->
+                
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+        
+    </main>
+    <script>
+        document.getElementsByClassName("add-btn")[0].style.visibility = "hidden";
+    </script>
+<%- include("partials/footer.ejs"); %>
