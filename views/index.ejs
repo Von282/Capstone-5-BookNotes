@@ -13,7 +13,7 @@
             </form>
         </div>
         <div class="books-section">
-            <% if (locals.library) { %>
+            <% if (locals.library.length > 0) { %>
                 <% for(let item of library) {%>
                 <div class="box">
                     <a href="/book/<%= item.id%>" class="details-link">
@@ -33,6 +33,12 @@
                 </div>
             <% }%>
         </div>
+        <div class="logout-div">
+            <div>
+                <a href="/logout" class="logout-btn" role="button">Logout</a>
+            </div>
+        </div>
+        
     </main>
    
     <a href="#" class="to-top">
@@ -44,6 +50,12 @@
         const routeSelect = document.getElementById("sort-order");
         const form = document.getElementById("sort-form");
         const toTop = document.querySelector(".to-top");
+        const sortDiv = document.querySelector(".sorting");
+        const booksDiv = document.getElementsByClassName("box");
+        
+        if(booksDiv.length == 0) {
+            sortDiv.style.display = "none";
+        }
 
         window.addEventListener("scroll", () => {
             if(window.pageYOffset > 100) {

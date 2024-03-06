@@ -1,0 +1,18 @@
+<%- include("partials/header.ejs") %>
+
+    <main class="home-main">
+        <div class="home-title">
+            <h1>Reading Library</h1>
+        </div>
+        <div class="btns">
+            <a href="/register" class="register-btn" role="button">Register</a>
+            <a href="/login" class="login-btn" role="button">Login</a>
+        </div>
+    </main>
+    
+    <script>
+       document.getElementsByClassName("add-btn")[0].style.visibility = "hidden"; 
+       document.getElementsByClassName("icon")[0].setAttribute("href", "/");
+    </script>
+
+<%- include("partials/footer.ejs") %>

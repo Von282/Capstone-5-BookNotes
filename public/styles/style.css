@@ -1,3 +1,4 @@
+/* ////////////////////// Styling for index.ejs ///////////////////////// */
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +7,7 @@
 
 html {
     scroll-behavior: smooth;
+    min-height: 100%;
 }
 
 body {
@@ -36,6 +38,11 @@ header > div {
     color: white;
 }
 
+.disable {
+    pointer-events: none;
+    cursor: default;
+}
+
 h1 .book {
     font-size: 2.5rem;
     margin-right: 2rem;
@@ -49,6 +56,9 @@ header .title {
     border-radius: 11px;
     padding: 0.5em;
     border: 2px solid #253453;
+    font-size: 0.9rem;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
     transition: all 0.3s;
 }
 
@@ -83,7 +93,7 @@ main {
     justify-content: center;
     margin-top: 1.3em;
     overflow: visible;
-    min-height: 80vh;
+    min-height: 75vh;
 }
 
 .box {
@@ -102,6 +112,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 70vh;
     width: 100vw;
     font-size: 3rem;
     font-weight: 500;
@@ -166,6 +177,30 @@ main {
     
 }
 
+.logout-div {
+    display: flex;
+    justify-content: center;
+    height: 5vh;
+    margin-bottom: 2em;
+}
+
+.logout-btn {
+    text-decoration: none;
+    background-color: #e8e8e8;
+    border-radius: 11px;
+    padding: 1em 0.5em 1em 0.5em;
+    border: 2px solid #253453;
+    color: black;
+    font-size: 1rem;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+    transition: all 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #bab9b9;
+}
+
 footer {
     text-align: center;
     padding: 1em;
@@ -175,7 +210,7 @@ footer {
     color: white;
     font-size: 1.2rem;
 }
-/* ////////////////////// Styling for index.ejs ///////////////////////// */
+/* ////////////////////// Styling for add.ejs ///////////////////////// */
 
 .add-header {
     padding-top: 2.5em;
@@ -261,6 +296,9 @@ input, #score {
     padding: 1em;
     border: 2px solid black;
     margin-bottom: 2em;
+    font-size: 0.9rem;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
     transition: all 0.3s;
 }
 
@@ -269,7 +307,7 @@ input, #score {
     color: white;
     background-color: #C97C5D;
 }
-/* ////////////////////// Styling for add.ejs ///////////////////////// */
+/* ////////////////////// Styling for book.ejs ///////////////////////// */
 
 .content-container {
     display: flex;
@@ -390,3 +428,121 @@ input, #score {
     justify-content: center;
     align-items: center;
 }
+/* ////////////////////// Styling for home.ejs ///////////////////////// */
+
+.home-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 76vh;
+}
+
+.home-title {
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 500;
+    margin-bottom: 1.5em;
+    color: #ebebeb;
+}
+
+.register-btn, .login-btn {
+    text-decoration: none;
+    background-color: #e8e8e8;
+    border-radius: 11px;
+    padding: 1em 2.5em 1em 2.5em;
+    border: 2px solid #253453;
+    color: black;
+    font-size: 1rem;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+    transition: all 0.3s;
+}
+
+.register-btn {
+    margin-right: 1.5em;
+}
+
+.login-btn {
+    margin-left: 1.5em;
+}
+
+.register-btn:hover, .login-btn:hover {
+    background-color: #bab9b9;
+}
+
+/* ////////////////////// Styling for login.ejs and register.ejs ///////////////////////// */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 76vh;
+}
+
+.methods-in {
+    display: flex;
+}
+
+.login-h1{
+    margin-bottom: 1em;
+    color: #ebebeb;
+    font-size: 2rem;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 500;
+}
+
+.login-form {
+    color:#ebebeb;
+    font-size: 1.5rem;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+}
+
+.form-input {
+    display: block;
+    height: 5.5vh;
+    width: 29vw;
+    padding: 0.3em;
+    font-size: 1.1rem;
+    margin-bottom: 1em ;
+    background-color: rgb(231, 230, 230);
+}
+
+.google-signin {
+    padding-top: 4em;
+}
+
+.google-signin-btn {
+    text-decoration: none;
+    margin-top: 12em;
+    margin-left: 1.5em;
+    background-color: #e8e8e8;
+    border-radius: 11px;
+    padding: 1em 2.5em 1em 2.5em;
+    border: 2px solid #253453;
+    color: black;
+    font-size: 1.2rem;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+    transition: all 0.3s;
+}
+
+.login-submit-btn {
+    border-radius: 11px;
+    padding: 1em;
+    border: 2px solid black;
+    background-color: #e8e8e8;
+    transition: all 0.3s;
+}
+
+.login-submit-btn:hover {
+    cursor: pointer;
+    background-color: #bab9b9;
+}
+
+.google-signin-btn:hover {
+    background-color: #bab9b9;
+}
+/* ////////////////////// Styling for ?.ejs ///////////////////////// */
