@@ -310,7 +310,7 @@ passport.use("google", new GoogleStrategy({
     callbackURL: 'http://localhost:3000/auth/google/index',
     userProfileURL: 'https://www.googleapis.com/oauth2/v3/userinfo'
 }, async (accessToken, refreshToken, profile, cb) => {
-    console.log(profile);
+    //console.log(profile);
     try {
         const result = await db.query("SELECT * FROM users WHERE email = $1", [profile.email]);
 
